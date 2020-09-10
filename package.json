@@ -1,6 +1,6 @@
 {
   "name": "sapper-smui-rollup-ex",
-  "description": "sapper+smui+rollup ex",
+  "description": "smui sapper rollup ex",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -21,6 +21,8 @@
     "@babel/plugin-transform-runtime": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
     "@babel/runtime": "^7.11.2",
+    "@iconify/icons-mdi": "^1.0.134",
+    "@iconify/svelte": "^1.0.2",
     "@mdi/js": "^5.5.55",
     "@rollup/plugin-alias": "^3.1.1",
     "@rollup/plugin-babel": "^5.2.1",

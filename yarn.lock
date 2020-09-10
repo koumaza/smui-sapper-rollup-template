@@ -838,6 +838,39 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@cyberalien/redundancy@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@cyberalien/redundancy/-/redundancy-1.0.0.tgz#0e79270c5c1c4b6d01669a92808008e348cf7b0d"
+  integrity sha512-/tx5GpGSyMn5FrOSggDSm9yJDLcEXiK0+zdCBssST6w9QgdJjoQ9lRBSxql/3vgQoI+7XbubWsP86jjbuVnFcA==
+
+"@iconify/core@^1.0.0-beta.4":
+  version "1.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/@iconify/core/-/core-1.0.0-rc.1.tgz#21f152d834d22a1e1c22b39b531b85d71047276f"
+  integrity sha512-fkDykGh4CwPPtIiS1WWfDVDZTwVVhJOAzVpUpcQel0NdQ95ndQTZwFHiTcy8GD0CgFRekFGyVy42h20qH72f0Q==
+  dependencies:
+    "@cyberalien/redundancy" "^1.0.0"
+    "@iconify/types" "^1.0.3"
+  optionalDependencies:
+    axios "^0.19.2"
+
+"@iconify/icons-mdi@^1.0.134":
+  version "1.0.134"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-mdi/-/icons-mdi-1.0.134.tgz#24a88a6dbc3af111fce8aee70487f9eff3aeb4c7"
+  integrity sha512-Sogs4CfrAsztIzp929wa0Ekx9ODszFAU0a/UdrwRZtwzb5FF3V9+Xs8v9YvtCna31CUt7/LV9kjm8WNpFs0TEQ==
+
+"@iconify/svelte@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@iconify/svelte/-/svelte-1.0.2.tgz#a24af8a7a604358c325183723ff5f549027001f0"
+  integrity sha512-w4LCok0+uZRROim7vE5aY2jkg7XxuIA1wp9g88Rgh/54wbrWvbUwzPuJtLF+plnvvb5Y0P1F/ljp5HGlHBrvpw==
+  dependencies:
+    "@iconify/core" "^1.0.0-beta.4"
+    "@iconify/types" "^1.0.3"
+
+"@iconify/types@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@iconify/types/-/types-1.0.3.tgz#6aa09c85447fdde381feeb1b0270669e5201490b"
+  integrity sha512-FJvID3jDE1axAiVPUU8+ANeYt8neG1hlSX8g+GFLUaTW6aLMtYx6F2CY1jj9N/unClwdQPtXCE7qORqEBvtVaQ==
+
 "@material/animation@^3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@material/animation/-/animation-3.1.0.tgz#ab04e7c2e92ab370a2b28d12af1b88538d23014f"
@@ -1841,6 +1874,13 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.10.1.tgz#e1e82e4f3e999e2cfd61b161280d16a111f86428"
   integrity sha512-zg7Hz2k5lI8kb7U32998pRRFin7zJlkfezGJjUc2heaD4Pw2wObakCDVzkKztTm/Ln7eiVvYsjqak0Ed4LkMDA==
 
+axios@^0.19.2:
+  version "0.19.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
+  integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
+  dependencies:
+    follow-redirects "1.5.10"
+
 babel-plugin-dynamic-import-node@^2.3.3:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/babel-plugin-dynamic-import-node/-/babel-plugin-dynamic-import-node-2.3.3.tgz#84fda19c976ec5c6defef57f9427b3def66e17a3"
@@ -2363,6 +2403,13 @@ debug@2.6.9:
   dependencies:
     ms "2.0.0"
 
+debug@=3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
+  integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
+  dependencies:
+    ms "2.0.0"
+
 debug@^4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
@@ -2662,6 +2709,13 @@ focus-trap@^5.0.0:
   dependencies:
     tabbable "^4.0.0"
     xtend "^4.0.1"
+
+follow-redirects@1.5.10:
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
+  integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
+  dependencies:
+    debug "=3.1.0"
 
 forever-agent@~0.6.1:
   version "0.6.1"
