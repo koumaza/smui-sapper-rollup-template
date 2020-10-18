@@ -39,5 +39,8 @@
     "svelte": "^3.24.1",
     "svelte-material-ui": "^1.0.0",
     "svelte-preprocess": "^4.2.1"
+  },
+  "engines": {
+    "yarn": "YARN NO LONGER USED - use npm instead."
   }
 }
