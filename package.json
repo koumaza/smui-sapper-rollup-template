@@ -1,14 +1,15 @@
 {
   "name": "sapper-smui-rollup-ex",
   "description": "smui sapper rollup ex",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build --legacy",
     "export": "sapper export --legacy",
     "start": "node __sapper__/build",
-    "nmenv": "export PATH=$PWD/node_modules/.bin:$PATH;set -gx PATH $PWD/node_modules/.bin"
+    "nmenv": "export PATH=$PWD/node_modules/.bin:$PATH;set -gx PATH $PWD/node_modules/.bin",
+    "initial": "npm i -g pnpm && pnpm i && pnpm run dev"
   },
   "dependencies": {
     "compression": "^1.7.4",
@@ -42,6 +43,6 @@
     "svelte-preprocess": "^4.2.1"
   },
   "engines": {
-    "yarn": "YARN NO LONGER USED - use npm instead."
+    "yarn": "YARN NO LONGER USED - use pnpm instead."
   }
 }
