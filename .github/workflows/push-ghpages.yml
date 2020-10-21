@@ -41,7 +41,7 @@ jobs:
         git config --global user.name  $GITHUB_ACTOR
         git clone -b gh-pages https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/koumaza/smui-sapper-rollup-template.git gh-page/
         rm -rf gh-page/*
-        cp -r __sapper__/build/* gh-page/
+        cp -r __sapper__/export/* gh-page/
         cd gh-page/
         git add -A && git commit -m "$(date "+%Z:%Y-%m%d--%H%M%S")"
         git push
