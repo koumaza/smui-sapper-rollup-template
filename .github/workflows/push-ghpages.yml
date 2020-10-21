@@ -40,9 +40,10 @@ jobs:
       run: |
         git config --global user.email $email
         git config --global user.name  $username
-        git clone -b gh-pages https://github.com/koumaza/smui-sapper-rollup-template.git gh-page/
+        git clone -b gh-pages https://github.com/$username/smui-sapper-rollup-template.git gh-page/
         rm -rf gh-page/*
         cp -r __sapper__/build/* gh-page/
         cd gh-page/
+        git remote set-url origin git@github.com:$username/smui-sapper-rollup-template.git
         git add -A && git commit -m "$(date "+%Z:%Y-%m%d--%H%M%S")"
         git push
