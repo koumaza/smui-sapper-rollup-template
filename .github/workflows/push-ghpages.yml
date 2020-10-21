@@ -10,7 +10,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10, 12, 14, 15]
+        node-version: [12, 14, 15]
 
     steps:
     - uses: actions/checkout@main
@@ -33,7 +33,7 @@ jobs:
     - name: Npm Build
       run: npm run initial --if-present ; npm run build --if-present
     - name: Push
-      if: ${{ 14 == ${{ matrix.node-version }} }}
+      if: 14 == ${{ matrix.node-version }}
       env:
         email: koumaza--@outlook.com
       run: |
