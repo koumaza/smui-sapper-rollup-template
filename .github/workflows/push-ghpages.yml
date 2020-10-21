@@ -31,7 +31,7 @@ jobs:
           ${{ runner.os }}-${{ matrix.node-version }}-build-
           ${{ runner.os }}-
     - name: Npm Build
-      run: npm run initial --if-present ; npm run export --if-present
+      run: npm run initial --if-present ; npm run export-legacy --if-present
     - name: Push
       env: 
         GITHUB_EMAIL: koumaza--@outlook.com
