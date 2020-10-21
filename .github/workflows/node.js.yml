@@ -1,0 +1,33 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10, 12, 14]
+
+    steps:
+    - uses: actions/checkout@main
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@main
+      with:
+        node-version: ${{ matrix.node-version }}
+        check-latest: true
+    - name: Cache node_modules by pnpm
+      uses: actions/cache@main
+      env:
+        cache-name: cache-node-modules
+      with:
+        path: ~/.pnpm-store
+        key: ${{ runner.os }}-${{ matrix.node-version }}-build-${{ env.cache-name }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-${{ matrix.node-version }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-${{ matrix.node-version }}-build-
+          ${{ runner.os }}-
+    - run: npm run initial --if-present ; npm run build --if-present
