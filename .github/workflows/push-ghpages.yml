@@ -33,7 +33,7 @@ jobs:
     - name: Npm Build
       run: npm run initial --if-present ; npm run build-legacy --if-present
     - name: Push
-      if: matrix.node-version == 14
+      if: matrix.node-version == '14'
       env: 
         GITHUB_EMAIL: koumaza--@outlook.com
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
