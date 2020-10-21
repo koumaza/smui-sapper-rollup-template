@@ -34,12 +34,10 @@ jobs:
       run: npm run initial --if-present ; npm run build --if-present
     - name: Push
       if: 14 == ${{ matrix.node-version }}
-      env:
-        email: koumaza--@outlook.com
       run: |
-        git config --global user.email $email
-        git config --global user.name  $GITHUB_ACTOR
-        git clone -b gh-pages https://github.com/$GITHUB_ACTOR/smui-sapper-rollup-template.git gh-page/
+        git config --global user.email "koumaza--@outlook.com"
+        git config --global user.name  "koumaza"
+        git clone -b gh-pages https://github.com/koumaza/smui-sapper-rollup-template.git gh-page/
         rm -rf gh-page/*
         cp -r __sapper__/build/* gh-page/
         cd gh-page/
