@@ -36,10 +36,9 @@ jobs:
       if: 14 == ${{ matrix.node-version }}
       env:
         email: koumaza--@outlook.com
-        username: ${{ github.actor }}
       run: |
         git config --global user.email $email
-        git config --global user.name  $username
+        git config --global user.name  $GITHUB_ACTOR
         git clone -b gh-pages https://github.com/$username/smui-sapper-rollup-template.git gh-page/
         rm -rf gh-page/*
         cp -r __sapper__/build/* gh-page/
