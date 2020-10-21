@@ -19,12 +19,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         check-latest: true
-    - name: Cache node_modules by pnpm
+    - name: Cache node_modules
       uses: actions/cache@main
       env:
         cache-name: cache-node-modules
       with:
-        path: ~/.pnpm-store
+        path: node_modules
         key: ${{ runner.os }}-${{ matrix.node-version }}-build-${{ env.cache-name }}-${{ hashFiles('**/pnpm-lock.yaml') }}
         restore-keys: |
           ${{ runner.os }}-${{ matrix.node-version }}-build-${{ env.cache-name }}-
@@ -33,7 +33,12 @@ jobs:
     - name: Npm Build
       run: npm run initial --if-present ; npm run build --if-present
     - name: Push
+      if: ${{ 14 == ${{ matrix.node-version }} }}
+      env:
+        email: koumaza--@outlook.com
       run: |
+        git config --global user.email "$email"
+        git config --global user.name ${{ github.actor }}
         git clone -b gh-pages https://github.com/koumaza/smui-sapper-rollup-template.git gh-page/
         rm -rf gh-page/*
         cp -r __sapper__/build/* gh-page/
