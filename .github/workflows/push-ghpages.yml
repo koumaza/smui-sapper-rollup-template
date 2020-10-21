@@ -42,4 +42,4 @@ jobs:
         cp -r __sapper__/build/* gh-page/
         cd gh-page/
         git add -A && git commit -m "$(date "+%Z:%Y-%m%d--%H%M%S")"
-        git push
+        git push origin gh-pages
