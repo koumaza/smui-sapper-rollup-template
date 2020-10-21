@@ -11,7 +11,7 @@
     "export-legacy": "sapper export --legacy",
     "start": "node __sapper__/build",
     "nmenv": "export PATH=$PWD/node_modules/.bin:$PATH;set -gx PATH $PWD/node_modules/.bin",
-    "initial": "npm i -g pnpm --no-progress && pnpm i --reporter=append-only"
+    "initial": "npm i"
   },
   "dependencies": {
     "compression": "^1.7.4",
