@@ -5,11 +5,13 @@
   "license": "",
   "scripts": {
     "dev": "sapper dev",
-    "build": "sapper build --legacy",
-    "export": "sapper export --legacy",
+    "build": "sapper build",
+    "export": "sapper export",
+    "build-legacy": "sapper build --legacy",
+    "export-legacy": "sapper export --legacy",
     "start": "node __sapper__/build",
     "nmenv": "export PATH=$PWD/node_modules/.bin:$PATH;set -gx PATH $PWD/node_modules/.bin",
-    "initial": "npm i -g pnpm && pnpm i"
+    "initial": "npm i -g pnpm --no-progress && pnpm i --reporter=append-only"
   },
   "dependencies": {
     "compression": "^1.7.4",
