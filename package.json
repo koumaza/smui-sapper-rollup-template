@@ -5,10 +5,10 @@
   "license": "",
   "scripts": {
     "dev": "sapper dev",
-    "build": "sapper build",
-    "export": "sapper export",
-    "build-legacy": "sapper build --legacy",
-    "export-legacy": "sapper export --legacy",
+    "build": "sapper --basepath build",
+    "export": "sapper --basepath export",
+    "build-legacy": "sapper build --basepath --legacy",
+    "export-legacy": "sapper export --basepath --legacy",
     "start": "node __sapper__/build",
     "nmenv": "export PATH=$PWD/node_modules/.bin:$PATH;set -gx PATH $PWD/node_modules/.bin",
     "initial": "npm i"
