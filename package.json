@@ -7,8 +7,8 @@
     "dev": "sapper dev",
     "build": "sapper --basepath build",
     "export": "sapper --basepath export",
-    "build-legacy": "sapper build --basepath --legacy",
-    "export-legacy": "sapper export --basepath --legacy",
+    "build-legacy": "sapper build --basepath smui-sapper-rollup-template --legacy",
+    "export-legacy": "sapper export --basepath smui-sapper-rollup-template --legacy",
     "start": "node __sapper__/build",
     "nmenv": "export PATH=$PWD/node_modules/.bin:$PATH;set -gx PATH $PWD/node_modules/.bin",
     "initial": "npm i"
