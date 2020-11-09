@@ -10,6 +10,7 @@ const url = dev ? '/' : 'smui-sapper-rollup-template';
 
 express()
   .use(
+    url,
     compression({ threshold: 0 }),
     sirv("static", { dev }),
     sapper.middleware()
