@@ -80,7 +80,7 @@ export default {
       legacy &&
         babel({
           extensions: [".js", ".mjs", ".html", ".svelte"],
-          babelHelpers: 'runtime'
+          babelHelpers: 'runtime',
           exclude: ["node_modules/@babel/**"],
           presets: [
             [

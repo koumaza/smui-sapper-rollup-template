@@ -1,11 +1,21 @@
-# Template Working Now
-Refer to
+# [Template Working Now 🐘](https://koumaza.github.io/smui-sapper-rollup-template)
+# How to use
+## For GitHub-Pages (GitLab-Pages)
+### 1. Replace to your information
+#### `src/server.js`
+```javascript:server.js
+...
+
+.use
+  process.env.BASE_NAME || '/smui-sapper-rollup-template',
+  
+...
+```
+
+| Before | After |
+|---|---|
+|  `process.env.BASE_NAME \|\| '/smui-sapper-rollup-template',` |  `process.env.BASE_NAME \|\| ` ___`'/YourRepositoryName'`___ `,` |
+### 2. Enable Dependabot
+# Refer to
 - https://github.com/kafai97/sapper-smui-boilerplate
-- https://github.com/hperrin/svelte-material-ui/issues/36
-# Important Tips
-Do not add `@manifest` group
-
-These affect Svelte and sass.
-Simply put, it can fail. If you don't need it, you should uninstall it and see if it works.
-
-In the first place, I made it because other Repo spewed an error and did not work.
+- https://github.com/hperrin/svelte-material-ui/issues/361

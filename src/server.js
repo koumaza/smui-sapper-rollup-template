@@ -8,6 +8,7 @@ const dev = NODE_ENV === "development";
 
 express()
   .use(
+    process.env.BASE_NAME || '/smui-sapper-rollup-template',
     compression({ threshold: 0 }),
     sirv("static", { dev }),
     sapper.middleware()

@@ -1,0 +1,51 @@
+name: Push to Gh-Pages
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14]
+
+    steps:
+    - uses: actions/checkout@main
+    - name: Use Node.js ${{ matrix.node-version }}.x
+      uses: actions/setup-node@main
+      with:
+        node-version: ${{ matrix.node-version }}
+        check-latest: true
+    - name: Cache node_modules
+      uses: actions/cache@main
+      env:
+        cache-name: cache-node-modules
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-${{ matrix.node-version }}-build-${{ env.cache-name }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-${{ matrix.node-version }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-${{ matrix.node-version }}-build-
+          ${{ runner.os }}-
+    - name: Npm Build
+      run: |
+        export GHBASEPATH=$(echo -n $GITHUB_REPOSITORY|sed -E 's/^.*\///g')
+        npm run initial --if-present
+        npm run export-legacy-basepath $GHBASEPATH --if-present 
+    - name: Push
+      env:
+        GIT_EMAIL: github-actions[bot]@users.noreply.github.com
+        GIT_ACTOR: github-actions[bot]
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git config --global user.email $GIT_EMAIL
+        git config --global user.name  $GIT_ACTOR
+        git clone -b gh-pages https://${GIT_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY} gh-page/
+        rm -rf gh-page/*
+        cp -r __sapper__/export/*/* gh-page/
+        cd gh-page/
+        git add -A && git commit -m "$(date "+%Z:%Y-%m%d--%H%M%S")"
+        git push

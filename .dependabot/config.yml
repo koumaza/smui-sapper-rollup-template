@@ -1,0 +1,16 @@
+version: 1
+update_configs:
+  - package_manager: "javascript"
+    directory: "/"
+    update_schedule: "live"
+    default_labels:
+      - "dependencies"
+      - "dependabot"
+      - "npm"
+    allowed_updates:
+      - match:
+          # Only includes indirect (aka transient/sub-dependencies)
+          update_type: "all"
+          
+    default_assignees:
+      - "koumaza"
