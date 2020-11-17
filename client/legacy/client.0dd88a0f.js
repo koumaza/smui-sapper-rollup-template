@@ -1538,7 +1538,7 @@ var SvelteComponent = /*#__PURE__*/function () {
 
 function dispatch_dev(type, detail) {
   document.dispatchEvent(custom_event(type, Object.assign({
-    version: '3.29.4'
+    version: '3.29.7'
   }, detail)));
 }
 
@@ -2641,6 +2641,8 @@ function create_default_slot(ctx) {
         if (!if_block) {
           if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
           if_block.c();
+        } else {
+          if_block.p(ctx, dirty);
         }
 
         transition_in(if_block, 1);
@@ -2958,11 +2960,11 @@ var App = /*#__PURE__*/function (_SvelteComponentDev) {
 var ignore = [];
 var components = [{
   js: function js() {
-    return Promise.all([import('./index.dd28d7b0.js'), __inject_styles(["client-779a6ad8.css","index-2d39ed90.css"])]).then(function(x) { return x[0]; });
+    return Promise.all([import('./index.24208fff.js'), __inject_styles(["client-779a6ad8.css","index-2d39ed90.css"])]).then(function(x) { return x[0]; });
   }
 }, {
   js: function js() {
-    return Promise.all([import('./about.576a9c8a.js'), __inject_styles(["client-779a6ad8.css"])]).then(function(x) { return x[0]; });
+    return Promise.all([import('./about.252e68dc.js'), __inject_styles(["client-779a6ad8.css"])]).then(function(x) { return x[0]; });
   }
 }];
 var routes = [{
